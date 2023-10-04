@@ -43,8 +43,8 @@ if uploaded_file is not None:
 
     carbon_coefficient_steel = st.sidebar.text_input('Carbon Coefficient Steel', '1.13')  # Default value of '0.0'
     carbon_coefficient_timber = st.sidebar.text_input('Carbon Coefficient Timber', '0.43')
-    carbon_coefficient_concrete = st.sidebar.text_input('Carbon Coefficient Concrete', '0.2')
-    carbon_coefficient_reinforcement = st.sidebar.text_input('Carbon Coefficient Reinforcement', '1.96')
+    carbon_coefficient_concrete = st.sidebar.text_input('Carbon Coefficient Concrete', '0.175')
+    carbon_coefficient_reinforcement = st.sidebar.text_input('Carbon Coefficient Reinforcement', '1.99')
     material_sourcing_options = ['Local', 'Global']
     material_sourcing_coefficient = st.sidebar.selectbox('The source of material', material_sourcing_options)
     material_sourcing_mapping = {'Local': 0.032, 'Global': 0.183}
