@@ -50,6 +50,8 @@ if uploaded_file is not None:
     material_sourcing_mapping = {'Local': 0.032, 'Global': 0.183}
     material_sourcing_coefficient = material_sourcing_mapping[material_sourcing_coefficient]
     carbon_coefficient_steel  = float(carbon_coefficient_steel) + float(material_sourcing_coefficient)
+    carbon_coefficient_timber  = float(carbon_coefficient_timber) + float(material_sourcing_coefficient)
+    carbon_coefficient_concrete  = float(carbon_coefficient_concrete) + float(material_sourcing_coefficient)
 
 
 
