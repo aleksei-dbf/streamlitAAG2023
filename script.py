@@ -41,7 +41,7 @@ if uploaded_file is not None:
 
     features = pd.DataFrame(user_data, index=[0])
 
-    carbon_coefficient_steel = st.sidebar.text_input('Carbon Coefficient Steel', '2.45')  # Default value of '0.0'
+    carbon_coefficient_steel = st.sidebar.text_input('Carbon Coefficient Steel', '1.13')  # Default value of '0.0'
     carbon_coefficient_timber = st.sidebar.text_input('Carbon Coefficient Timber', '0.43')
     carbon_coefficient_concrete = st.sidebar.text_input('Carbon Coefficient Concrete', '0.2')
     carbon_coefficient_reinforcement = st.sidebar.text_input('Carbon Coefficient Reinforcement', '1.96')
@@ -77,16 +77,16 @@ if uploaded_file is not None:
                 
             elif ConstructionType == 1: #"Steel+Concrete"
                 embodied_carbon = prediction * float(carbon_coefficient_steel)
-                embodied_carbon += 0.2 * Area_m2 *2400 * float(carbon_coefficient_concrete)
-                reinforcement_weight = 0.20* Area_m2 * 100
+                embodied_carbon += 0.15 * Area_m2 *2400 * float(carbon_coefficient_concrete)
+                reinforcement_weight = 0.15* Area_m2 * 100
                 embodied_carbon += reinforcement_weight * float(carbon_coefficient_reinforcement)
             elif ConstructionType == 2: # Timber
                 embodied_carbon = prediction * float(carbon_coefficient_timber)
                 embodied_carbon += 0.24 * Area_m2 *600 * float(carbon_coefficient_timber)
             elif ConstructionType == 3: # Concrete
                 embodied_carbon = prediction * float(carbon_coefficient_concrete)
-                embodied_carbon += 0.2 * Area_m2 *2400 * float(carbon_coefficient_concrete)
-                reinforcement_weight = 0.20* Area_m2 * 100 + prediction / 2400 * 200
+                embodied_carbon += 0.15 * Area_m2 *2400 * float(carbon_coefficient_concrete)
+                reinforcement_weight = 0.15* Area_m2 * 100 + prediction / 2400 * 200
                 embodied_carbon += reinforcement_weight * float(carbon_coefficient_reinforcement)
             st.subheader('Prediction:')
             st.write(round(float(embodied_carbon / 1000), 1), 'Tonne CO2 total')
