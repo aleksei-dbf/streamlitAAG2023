@@ -12,9 +12,9 @@ if uploaded_file is not None:
 
     # Create a function to take user inputs
     st.write('Provide your inputs:')
-    Floors = st.slider('Floors', 5, 10, 5)
-    X = st.slider('X', 6.0, 10.0, 6.0, 0.1)
-    Y = st.slider('Y', 6.0, 10.0, 6.0, 0.1)
+    Floors = st.slider('Floors', 2, 19, 5)
+    X = st.slider('X', 5.0, 10.0, 6.0, 0.1)
+    Y = st.slider('Y', 5.0, 10.0, 6.0, 0.1)
     # ConstructionType = st.slider('ConstructionType', 0, 10, 1)
     ConstructionType_options = ['Steel+Timber', 'Steel+Concrete', 'Timber', 'Concrete']
     ConstructionType = st.selectbox('Material', ConstructionType_options)
@@ -29,7 +29,7 @@ if uploaded_file is not None:
     ConstructionType = construction_type_mapping[ConstructionType]
     # Floor_Height = st.sidebar.slider('Floor Height', 0, 10, 1)
     Floor_Height = st.slider('Floor height', 3.0, 4.5, 3.0, 0.1)
-    Area_m2 = st.slider('Area m2', 2500, 9000, 2500)
+    Area_m2 = st.slider('Area m2', 700, 9000, 20000)
 
     # Store a dictionary into a data frame
     user_data = {'Floors': Floors,
